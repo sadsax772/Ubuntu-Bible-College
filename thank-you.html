@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Thank You - Ubuntu Bible College</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <section class="thank-you-section">
+        <div class="container">
+            <h1>Application Submitted Successfully</h1>
+            <p>Thank you for applying to Ubuntu Bible College!</p>
+            <p><strong>Program Applied For:</strong> <span id="display-program"></span></p>
+            <p><strong>Date of Birth:</strong> <span id="display-dob"></span></p>
+            <p><strong>Application Date:</strong> <span id="display-date"></span></p>
+            <a href="index.html" class="btn">Return to Homepage</a>
+        </div>
+    </section>
+
+    <script>
+        // Fetch and display stored values
+        const program = localStorage.getItem("program");
+        const dob = localStorage.getItem("dob");
+        const today = new Date().toLocaleDateString();
+
+        document.getElementById("display-program").textContent = program || "N/A";
+        document.getElementById("display-dob").textContent = dob || "N/A";
+        document.getElementById("display-date").textContent = today;
+    </script>
+</body>
+</html>
