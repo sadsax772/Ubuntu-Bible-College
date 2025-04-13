@@ -1,31 +1,58 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <title>Thank You - Ubuntu Bible College</title>
-    <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Thank You – Ubuntu Bible College</title>
+  <link rel="stylesheet" href="style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@300&display=swap" rel="stylesheet">
 </head>
 <body>
-    <section class="thank-you-section">
-        <div class="container">
-            <h1>Application Submitted Successfully</h1>
-            <p>Thank you for applying to Ubuntu Bible College!</p>
-            <p><strong>Program Applied For:</strong> <span id="display-program"></span></p>
-            <p><strong>Date of Birth:</strong> <span id="display-dob"></span></p>
-            <p><strong>Application Date:</strong> <span id="display-date"></span></p>
-            <a href="index.html" class="btn">Return to Homepage</a>
-        </div>
-    </section>
+  <header>
+    <div class="logo">
+      <h1>Ubuntu Bible College</h1>
+      <p>Training Disciples for Kingdom Service</p>
+    </div>
+    <nav>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="programs.html">Programs</a></li>
+        <li><a href="admissions.html">Admissions</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
 
-    <script>
-        // Fetch and display stored values
-        const program = localStorage.getItem("program");
-        const dob = localStorage.getItem("dob");
-        const today = new Date().toLocaleDateString();
+  <section class="form-section">
+    <div class="container">
+      <h2>Thank You for Applying!</h2>
+      <p>Your application has been received successfully.</p>
+      <div class="summary">
+        <h3>Application Summary</h3>
+        <p><strong>Program Applied For:</strong> <span id="programDisplay">Loading...</span></p>
+        <p><strong>Date of Birth:</strong> <span id="dobDisplay">Loading...</span></p>
+        <p><strong>Submission Date:</strong> <span id="dateDisplay">Loading...</span></p>
+      </div>
+      <p>We appreciate your interest in Ubuntu Bible College and will contact you shortly.</p>
+    </div>
+  </section>
 
-        document.getElementById("display-program").textContent = program || "N/A";
-        document.getElementById("display-dob").textContent = dob || "N/A";
-        document.getElementById("display-date").textContent = today;
-    </script>
+  <footer>
+    <div class="container">
+      <p>&copy; 2025 Ubuntu Bible College. All Rights Reserved.</p>
+    </div>
+  </footer>
+
+  <script>
+    window.onload = function () {
+      const program = localStorage.getItem("program");
+      const dob = localStorage.getItem("dob");
+      const date = localStorage.getItem("submitDate");
+
+      document.getElementById("programDisplay").textContent = program || "N/A";
+      document.getElementById("dobDisplay").textContent = dob || "N/A";
+      document.getElementById("dateDisplay").textContent = date || "N/A";
+    };
+  </script>
 </body>
 </html>
