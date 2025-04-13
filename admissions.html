@@ -1,180 +1,173 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Ubuntu Bible College - Admissions</title>
-    <link rel="stylesheet" href="style.css" />
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" />
-  </head>
-  <body>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ubuntu Bible College - Admissions Application</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@300&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+
+<script>
+    document.getElementById("application-form").addEventListener("submit", function () {
+        const program = document.getElementById("program").value;
+        const dob = document.getElementById("dob").value;
+        const date = new Date().toLocaleDateString();
+
+        localStorage.setItem("program", program);
+        localStorage.setItem("dob", dob);
+        localStorage.setItem("submitDate", date);
+    });
+</script>
+
+<body>
     <header>
-      <div class="logo">
-        <h1>Ubuntu Bible College</h1>
-        <p>Training Disciples for Kingdom Service</p>
-      </div>
-      <nav>
-        <ul>
-          <li><a href="index.html">Home</a></li>
-          <li><a href="about.html">About</a></li>
-          <li><a href="programs.html">Programs</a></li>
-          <li><a href="admissions.html" class="active">Admissions</a></li>
-          <li><a href="contact.html">Contact</a></li>
-        </ul>
-      </nav>
+        <div class="logo">
+            <h1>Ubuntu Bible College</h1>
+            <p>Training Disciples for Kingdom Service</p>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="programs.html">Programs</a></li>
+                <li><a href="admissions.html">Admissions</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </nav>
     </header>
 
-    <section class="admissions-section">
-      <div class="container">
-        <h2>Admissions Process</h2>
-        <div class="process-steps">
-          <div class="step">
-            <span class="step-number">1</span>
-            <h3>Complete Application</h3>
-            <p>
-              Fill out our online form with your personal and academic
-              information.
-            </p>
-          </div>
-          <div class="step">
-            <span class="step-number">2</span>
-            <h3>Submit Documents</h3>
-            <p>Send your transcripts, references, and testimony.</p>
-          </div>
-          <div class="step">
-            <span class="step-number">3</span>
-            <h3>Interview</h3>
-            <p>Meet with our admissions team for a spiritual life interview.</p>
-          </div>
-          <div class="step">
-            <span class="step-number">4</span>
-            <h3>Acceptance</h3>
-            <p>Receive your admission decision within 2-3 weeks.</p>
-          </div>
-        </div>
-      </div>
-    </section>
+    <input type="hidden" name="_redirect" value="https://sadsax772.github.io/thank-you.html">
+
+    <form 
+  id="application-form"
+  action="https://formspree.io/f/xwplyjbg"
+  method="POST">
+
+  <!-- Required for Formspree to send auto-reply -->
+  <input type="hidden" name="_replyto" id="email">
+  <input type="hidden" name="name" id="first-name">
+
+  <!-- Redirect to Thank You Page -->
+  <input type="hidden" name="_redirect" value="https://sadsax772.github.io/thank-you.html">
+
 
     <section class="form-section">
-      <div class="container">
-        <h2>Admissions Application</h2>
-        <form id="application-form" action="process_application.php" method="POST">
-          <!-- Form fields same as original -->
-          <section class="form-section">
-            <div class="container">
-                <h2>Admissions Application</h2>
-                <form id="application-form" action="process_application.php" method="POST">
-                    <div class="form-group">
-                        <label for="first-name">First Name*</label>
-                        <input type="text" id="first-name" name="first_name" required>
-                    </div>
-    
-                    <div class="form-group">
-                        <label for="last-name">Last Name*</label>
-                        <input type="text" id="last-name" name="last_name" required>
-                    </div>
-    
-                    <div class="form-group">
-                        <label for="email">Email*</label>
-                        <input type="email" id="email" name="email" required>
-                    </div>
-    
-                    <div class="form-group">
-                        <label for="phone">Phone Number</label>
-                        <input type="tel" id="phone" name="phone">
-                    </div>
-    
-                    <div class="form-group">
-                        <label for="dob">Date of Birth*</label>
-                        <input type="date" id="dob" name="dob" required>
-                    </div>
-    
-                    <div class="form-group">
-                        <label for="address">Address*</label>
-                        <textarea id="address" name="address" rows="3" required></textarea>
-                    </div>
-    
-                    <div class="form-group">
-                        <label for="program">Program of Interest*</label>
-                        <select id="program" name="program" required>
-                            <option value="">Select a program</option>
-                            <option value="bachelor-theology">Bachelor of Theology</option>
-                            <option value="christian-counseling">Christian Counseling</option>
-                            <option value="worship-ministry">Worship Ministry</option>
-                            <option value="missions">Missions Studies</option>
-                            <option value="other">Other</option>
-                        </select>
-                    </div>
-    
-                    <div class="form-group">
-                        <label for="education">Highest Education Level*</label>
-                        <select id="education" name="education" required>
-                            <option value="">Select education level</option>
-                            <option value="high-school">High School Diploma</option>
-                            <option value="associate">Associate Degree</option>
-                            <option value="bachelor">Bachelor's Degree</option>
-                            <option value="master">Master's Degree</option>
-                            <option value="other">Other</option>
-                        </select>
-                    </div>
-    
-                    <div class="form-group">
-                        <label for="testimony">Christian Testimony*</label>
-                        <textarea id="testimony" name="testimony" rows="5" required 
-                            placeholder="Please share your faith journey and why you want to attend our college"></textarea>
-                    </div>
-    
-                    <div class="form-group checkbox-group">
-                        <input type="checkbox" id="agree" name="agree" required>
-                        <label for="agree">I certify that all information provided is accurate and complete*</label>
-                    </div>
-    
-                    <button type="submit" class="btn">Submit Application</button>
-                </form>
-            </div>
-        </section>
-    
-        <footer>
-            <div class="container">
-                <div class="footer-content">
-                    <div class="footer-section">
-                        <h3>Quick Links</h3>
-                        <ul>
-                            <li><a href="index.html">Home</a></li>
-                            <li><a href="about.html">About</a></li>
-                            <li><a href="programs.html">Programs</a></li>
-                            <li><a href="admissions.html">Admissions</a></li>
-                            <li><a href="contact.html">Contact</a></li>
-                        </ul>
-                    </div>
-                    <div class="footer-section">
-                        <h3>Connect With Us</h3>
-                        <div class="social-icons">
-                            <a href="#"><i class="fab fa-facebook"></i></a>
-                            <a href="#"><i class="fab fa-twitter"></i></a>
-                            <a href="#"><i class="fab fa-instagram"></i></a>
-                            <a href="#"><i class="fab fa-youtube"></i></a>
-                        </div>
-                    </div>
-                    <div class="footer-section">
-                        <h3>Newsletter</h3>
-                        <form class="newsletter-form">
-                            <input type="email" placeholder="Your email address">
-                            <button type="submit">Subscribe</button>
-                        </form>
-                    </div>
+        <div class="container">
+            <h2>Admissions Application</h2>
+            <form id="application-form" action="https://formspree.io/f/xwplyjbg" method="POST">
+                <div class="form-group">
+                    <label for="first-name">First Name*</label>
+                    <input type="text" id="first-name" name="first_name" required>
                 </div>
-                <div class="copyright">
-                    <p>&copy; 2025 Ubuntu Bible College. All Rights Reserved.</p>
+
+                <div class="form-group">
+                    <label for="last-name">Last Name*</label>
+                    <input type="text" id="last-name" name="last_name" required>
                 </div>
-            </div>
-        </footer>
-        </form>
-      </div>
+
+                <div class="form-group">
+                    <label for="email">Email*</label>
+                    <input type="email" id="email" name="email" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="phone">Phone Number</label>
+                    <input type="tel" id="phone" name="phone">
+                </div>
+
+                <div class="form-group">
+                    <label for="dob">Date of Birth*</label>
+                    <input type="date" id="dob" name="dob" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="address">Address*</label>
+                    <textarea id="address" name="address" rows="3" required></textarea>
+                </div>
+
+                <div class="form-group">
+                    <label for="program">Program of Interest*</label>
+                    <select id="program" name="program" required>
+                        <option value="">Select a program</option>
+                        <option value="Diploma-theology"> Diploma of Theology</option>
+                        <option value="bachelor-theology">Bachelor of Theology</option>
+                        <option value="Masters-theology">Masters of Theology</option>
+                        <option value="Diploma in Ministry">Diploma in Ministry</option>
+                        <option value="Bachelor of Ministry">Bachelor of Ministry</option>
+                        <option value="Masters of Ministry">Masters of Ministry</option>
+                        <option value="other">Other</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="education">Highest Education Level*</label>
+                    <select id="education" name="education" required>
+                        <option value="">Select education level</option>
+                        <option value="high-school">High School Diploma</option>
+                        <option value="associate">Associate Degree</option>
+                        <option value="bachelor">Bachelor's Degree</option>
+                        <option value="master">Master's Degree</option>
+                        <option value="other">Other</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="testimony">Christian Testimony*</label>
+                    <textarea id="testimony" name="testimony" rows="5" required 
+                        placeholder="Please share your faith journey and why you want to attend our college"></textarea>
+                </div>
+
+                <div class="form-group checkbox-group">
+                    <input type="checkbox" id="agree" name="agree" required>
+                    <label for="agree">I certify that all information provided is accurate and complete*</label>
+                </div>
+
+                <button type="submit" class="btn">Submit Application</button>
+            </form>
+        </div>
+        
     </section>
 
     <footer>
-      <!-- Same footer as index.html -->
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>Quick Links</h3>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="about.html">About</a></li>
+                        <li><a href="programs.html">Programs</a></li>
+                        <li><a href="admissions.html">Admissions</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>Connect With Us</h3>
+                    <div class="social-icons">
+                        <a href="https://www.facebook.com/katlego.lota.2025 " target="_blank"><i class="fab fa-facebook"></i>
+                        <a href="https://www.linkedin.com/in/katlego-lota-ramadi-560103252" target="_blank" class="social-icon"><i class="fab fa-linkedin"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="https://whatsapp.me/27817378562" target="_blank" class="social-icon"><i class="fab fa-whatsapp"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href=" href="https://youtube.com/@rmdkl7055?si=eYLJf_kTUHk3fA6w" target="_blank" class="social-icon"><i class="fab fa-whatsapp"></i></a>" target="_blank" class="social-icon"><i class="fab fa-whatsapp"></i></a>
+                        <a href="mailto:ramadikatlego8gmail.com" class="youtube-icon"><i class="fas fa-envelope"></i></a>
+                    </div>
+                </div>
+                <div class="footer-section">
+                    <h3>Newsletter</h3>
+                    <form class="newsletter-form">
+                        <input type="email" placeholder="Your email address">
+                        <button type="submit">Subscribe</button>
+                    </form>
+                </div>
+            </div>
+            <div class="copyright">
+                <p>&copy; 2025 Ubuntu Bible College. All Rights Reserved. </p>
+            </div>
+        </div>
     </footer>
-  </body>
+</body>
 </html>
