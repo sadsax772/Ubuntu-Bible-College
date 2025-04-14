@@ -19,7 +19,9 @@
       localStorage.setItem("submitDate", date);
     });
   </script>
-SS  
+ 
+<form action="https://formspree.io/f/xwplyjbg" method="POST" class="contact-form">
+    <input type="hidden" name="_next" value="thank-you.html">
   <body>
 
     <header>
@@ -46,7 +48,7 @@ SS
           ministry skills
         </p>
         <a href="admissions.html" class="btn">Apply Now</a>
-        <a href="thank-you.html" class="btn">Apply Now</a>
+    
 
       </div>
     </section>
@@ -67,7 +69,7 @@ SS
           <div class="footer-section">
             <h3>Connect With Us</h3>
             <div class="social-icons">
-                <a href="#"><i class="fab fa-facebook"></i></a>
+                
                 <a href="https://www.facebook.com/katlego.lota.2025 " target="_blank"><i class="fab fa-facebook"></i>
                 <a href="https://www.linkedin.com/in/katlego-lota-ramadi-560103252" target="_blank" class="social-icon"><i class="fab fa-linkedin"></i></a>
                 <a href="#"><i class="fab fa-twitter"></i></a>
@@ -89,6 +91,14 @@ SS
           <p>&copy; 2025 Ubuntu Bible College. All Rights Reserved.</p>
         </div>
       </div>
+
+      <script>
+        function startSite() {
+          document.getElementById("landing").style.display = "none";
+          document.getElementById("main-content").style.display = "block";
+        }
+      </script>
+      <script src="script.js"></script>
     </footer>
   </body>
 </html>
